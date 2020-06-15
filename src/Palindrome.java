@@ -2,7 +2,10 @@ public class Palindrome {
     private boolean isPalindrome(int number) {
         if (number < 0)
             return false;
-        int div = (int) Math.pow(10, String.valueOf(number).length() - 1);
+        int div = 1;
+        while(number / div > 10){
+            div = div * 10;
+        }
         while (number != 0) {
             int left = number / div;
             int right = number % 10;
